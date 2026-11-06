@@ -1,21 +1,18 @@
 # Variáveis de estado
-tentativas = 3
 pontos = 0
+acertos = 0
 
-# pergunta
-perguntas = 'Quantos lados tem um triângulo?'
-
-while tentativas > 0:
-    resposta = int(input(perguntas))
-
-    if resposta == 3:
+# perguntas e respostas
+perguntas = ["Quanto é 7 + 8?", "Qual é a capital do Brasil?", "Quantas horas tem um dia?"]
+respostas = ["15", "Brasilia", "24"]
+ 
+for i in range(3):
+    resposta = input(perguntas[i])
+    if resposta == respostas[i]:
+        pontos += 1
+        acertos += 1
         print('Resposta correta!')
-        pontos = pontos + 1
-        print(f'Pontuação: {pontos}')
-        break
     else:
-        print('Resposta errada...')
-        tentativas = tentativas - 1
-        print(f'Você tem {tentativas} tentativas...')
+        print('Resposta errada!')
 
-print(f'Pontuação: {pontos}.')
+print(f'Pontuação final: {pontos}. Você acertou {acertos} perguntas...')
